@@ -1,0 +1,29 @@
+﻿@model List<CadastroDeProdutos.Models.Produto> 
+
+<h2>Lista de Produtos</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Descrição</th>        
+            <th>Preço</th> 
+            <th>Imagem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model)
+        {
+            <tr>
+                <td>@produto.Nome</td>
+                <td>@produto.Categoria</td>
+                <td>@produto.Descricao</td>
+                <td>@produto.Preco</td>
+                <td>
+                    <!-- Exibe a imagem -->
+                    <img src="@produto.Imagem" alt="@produto.Nome" style="width: 100px; height: auto;" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
